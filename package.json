@@ -22,10 +22,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/ractor-execution-nodes.git"
+    "url": "https://github.com/rachaellynn/ractor-execution-nodes.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/ractor-execution-nodes/issues"
+    "url": "https://github.com/rachaellynn/ractor-execution-nodes/issues"
   },
-  "homepage": "https://github.com/your-org/ractor-execution-nodes#readme"
+  "homepage": "https://github.com/rachaellynn/ractor-execution-nodes#readme"
 }

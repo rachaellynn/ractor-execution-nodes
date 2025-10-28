@@ -2,6 +2,7 @@
 Ractor agent execution logic.
 Provides specialized execution capabilities for Python, JavaScript, file operations, and web operations.
 """
+from __future__ import annotations
 import asyncio
 import json
 import os
@@ -194,9 +195,9 @@ import numpy as np
 import matplotlib as mpl
 
 with open('requirements.txt', 'w') as f:
-    f.write(f"pandas=={pd.__version__}\\n")
-    f.write(f"numpy=={np.__version__}\\n")
-    f.write(f"matplotlib=={mpl.__version__}\\n")
+    f.write(f"pandas=={pd.__version__}\n")
+    f.write(f"numpy=={np.__version__}\n")
+    f.write(f"matplotlib=={mpl.__version__}\n")
 
 print("Packages installed and versions saved to requirements.txt")
 '''
@@ -219,7 +220,7 @@ print(df.head())
 
 # Save for later use
 df.to_csv('coffee_data.csv', index=False)
-print("\\nData saved to coffee_data.csv")
+print("\nData saved to coffee_data.csv")
 '''
 
         elif "gdp" in task_description.lower():
@@ -275,9 +276,9 @@ top5 = df.groupby('Country')['Value'].max().nlargest(5).reset_index()
 
 # Save to text file
 with open('top5.txt', 'w') as f:
-    f.write("Top 5 Countries by Maximum GDP:\\n")
+    f.write("Top 5 Countries by Maximum GDP:\n")
     for i, (country, gdp) in enumerate(top5.values, 1):
-        f.write(f"{i}. {country}: {gdp:,.0f}\\n")
+        f.write(f"{i}. {country}: {gdp:,.0f}\n")
 
 print("Top 5 countries by maximum GDP:")
 print(top5)
@@ -436,7 +437,7 @@ console.log("Task completed successfully");
 
     def _extract_dependencies_from_output(self, output: str):
         """Extract installed dependencies from subprocess output"""
-        lines = output.split('\\n')
+        lines = output.split('\n')
         for line in lines:
             if 'Successfully installed' in line:
                 # Extract package names
@@ -447,7 +448,7 @@ console.log("Task completed successfully");
     def _extract_urls(self, text: str) -> List[str]:
         """Extract URLs from text"""
         import re
-        url_pattern = r'https?://[^\\s<>"{}|\\\\^`[\\]]+''
+        url_pattern = r'https?://[^\s<>"{}|\\^`\[\]]+'
         return re.findall(url_pattern, text)
 
     async def _download_file(self, url: str) -> Optional[str]:
