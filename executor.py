@@ -187,7 +187,7 @@ import sys
 # Install required packages
 packages = ['pandas', 'numpy', 'matplotlib']
 for package in packages:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', package, '--break-system-packages'])
 
 # Print versions to requirements.txt
 import pandas as pd
