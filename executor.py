@@ -195,9 +195,9 @@ import numpy as np
 import matplotlib as mpl
 
 with open('requirements.txt', 'w') as f:
-    f.write(f"pandas=={pd.__version__}\n")
-    f.write(f"numpy=={np.__version__}\n")
-    f.write(f"matplotlib=={mpl.__version__}\n")
+    f.write("pandas==" + pd.__version__ + "\\n")
+    f.write("numpy==" + np.__version__ + "\\n")
+    f.write("matplotlib==" + mpl.__version__ + "\\n")
 
 print("Packages installed and versions saved to requirements.txt")
 '''
@@ -278,16 +278,16 @@ top5 = df.groupby('Country')['Value'].max().nlargest(5).reset_index()
 with open('top5.txt', 'w') as f:
     f.write("Top 5 Countries by Maximum GDP:\n")
     for i, (country, gdp) in enumerate(top5.values, 1):
-        f.write(f"{i}. {country}: {gdp:,.0f}\n")
+        f.write(str(i) + ". " + country + ": " + f"{gdp:,.0f}" + "\\n")
 
 print("Top 5 countries by maximum GDP:")
 print(top5)
 '''
 
         # Default Python code
-        return f'''
-# Generated Python code for: {task_description}
-print("Executing task: {task_description}")
+        return '''
+# Generated Python code for: ''' + task_description + '''
+print("Executing task: ''' + task_description + '''")
 print("Task completed successfully")
 '''
 
@@ -356,9 +356,9 @@ console.log('Added POST /data route');
 '''
 
         # Default JavaScript code
-        return f'''
-// Generated JavaScript code for: {task_description}
-console.log("Executing task: {task_description}");
+        return '''
+// Generated JavaScript code for: ''' + task_description + '''
+console.log("Executing task: ''' + task_description + '''");
 console.log("Task completed successfully");
 '''
 
